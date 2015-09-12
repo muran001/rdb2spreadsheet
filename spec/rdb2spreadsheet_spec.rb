@@ -5,7 +5,8 @@ describe Rdb2spreadsheet do
     expect(Rdb2spreadsheet::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  let(:empty_instance) { Rdb2spreadsheet.new(nil, nil) }
+  it 'cannot create instance' do
+    expect(empty_instance).to be_nil
   end
 end
