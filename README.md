@@ -1,3 +1,9 @@
+# rdb2spreadsheet
+
+This is a gem library to transfer data from rdb to spreadsheet at google drive.
+
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
