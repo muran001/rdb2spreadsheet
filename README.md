@@ -1,9 +1,3 @@
-# rdb2spreadsheet
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rdb2spreadsheet`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +16,45 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+# rdb connection settings
+rdb_configs = {
+  "adapter"=>"mysql2",
+  "encoding"=>"utf8",
+  "host"=>"127.0.0.1",
+  "username"=>"root",
+  "password"=>nil,
+  "database"=>"shop",
+  "cast"=>false
+}
+
+# google spreadsheet settings
+spreadsheet_configs = {
+  'client_id' => 'xxxxxxxx',
+  'client_secret' => 'xxxxxxxxxx',
+  'refresh_token' => 'xxxxxxxxxx'
+}
+
+# sql statements (example)
+sqls = {
+  'under500' => '
+    select * from books where price < 500 limit 100
+  ',
+  '500to1000' => '
+    select * from books where price between 500 and 1000 limit 100
+  ',
+  'over1000' => '
+    select * from books where price > 10000 limit 100
+  '
+}
+
+# spreadsheet hash-key
+book_key = 'xxxxxxxxxxxxxxxxxxx'
+
+updater = Rdb2spreadsheet.new(rdb_configs, spreadsheet_configs)
+updater.import_all(book_key, sqls)
+
+```
 
 ## Development
 
