@@ -9,10 +9,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ['muran001']
   spec.email         = ['macmuran001@gmail.com']
 
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = ""
-  end
-
   spec.summary       = %q{A library to select rdb data and update spreadsheet using it.}
   spec.description   = %q{A library to select rdb data and update spreadsheet using it.}
   spec.homepage      = 'https://github.com/muran001/rdb2spreadsheet'
