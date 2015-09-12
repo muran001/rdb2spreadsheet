@@ -1,8 +1,8 @@
 require 'active_record'
 require 'yaml'
 
-module Mysql2spreadsheet
-  class MysqlClient
+module Rdb2spreadsheet
+  class RdbClient
     def initialize(configs)
       ActiveRecord::Base.establish_connection(configs)
       @connection = ActiveRecord::Base.connection

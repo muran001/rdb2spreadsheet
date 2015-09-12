@@ -1,7 +1,7 @@
 require 'google_drive'
 require 'yaml'
 
-module Mysql2spreadsheet
+module Rdb2spreadsheet
   class SpreadsheetClient
     OAUTH = {
       site:         'https://accounts.google.com',
