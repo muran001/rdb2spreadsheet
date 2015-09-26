@@ -20,6 +20,11 @@ module Rdb2spreadsheet
       @book = @session.spreadsheet_by_key(key)
     end
 
+    def read_worksheet(worksheet_title)
+      return nil if @book.nil? || worksheet_title.nil?
+      @book.worksheet_by_title(worksheet_title)
+    end
+
     def update_worksheet(worksheet_title, headers, records)
       return if @book.nil? || worksheet_title.nil? || records.nil?
 
