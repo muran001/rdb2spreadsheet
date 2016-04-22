@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'google_drive', '~> 1.0'
   spec.add_dependency 'activerecord', '~> 4.2'
-  spec.add_dependency 'mysql2', '~> 0.3'
+  spec.add_dependency 'mysql2', '~> 0.3.20'
   spec.add_dependency 'pg', '~> 0.18'
   spec.add_dependency 'sqlite3', '~> 1.3'
 
