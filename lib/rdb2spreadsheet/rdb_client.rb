@@ -3,8 +3,7 @@ require 'yaml'
 
 module Rdb2spreadsheet
   class RdbClient
-    def initialize(configs, zone_default = 'Tokyo')
-      Time.zone = zone_default # config.time_zone
+    def initialize(configs)
       ActiveRecord::Base.default_timezone = :local # config.active_record.default_timezone
       ActiveRecord::Base.establish_connection(configs)
       @connection = ActiveRecord::Base.connection
