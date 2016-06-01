@@ -9,6 +9,10 @@ module Rdb2spreadsheet
       @connection = ActiveRecord::Base.connection
     end
 
+    def exec(sql)
+      @connection.execute(sql)
+    end
+
     def select(sql)
       return nil if sql.nil?
       result = @connection.select_all(sql)

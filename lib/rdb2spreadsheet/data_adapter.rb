@@ -9,10 +9,6 @@ module Rdb2spreadsheet
       @spreadsheet_client = SpreadsheetClient.new(spreadsheet_configs)
     end
 
-    def exec(sql)
-      @rdb_client.select(sql)
-    end
-
     def import_all(book_key, sqls)
       @spreadsheet_client.open_book_by_key(book_key)
       sqls.each do |worksheet, sql|
