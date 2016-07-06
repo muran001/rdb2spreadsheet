@@ -30,6 +30,7 @@ module Rdb2spreadsheet
 
       begin
         target = find_or_create_worksheet_by_title(worksheet_title)
+        target.delete_rows(1, target.num_rows)
 
         headers.each.with_index(1) do |header, index|
           target[1, index] = header
