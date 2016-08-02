@@ -38,7 +38,7 @@ module Rdb2spreadsheet
 
         records.each.with_index(2) do |row, row_index|
           row.each.with_index(1) do |column, col_index|
-            target[row_index, col_index] = column
+            target[row_index, col_index] = column.gsub(/[[:cntrl:]]/, '')
           end
           target.save if row_index % 100 == 0
         end
