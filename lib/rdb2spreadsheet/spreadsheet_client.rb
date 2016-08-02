@@ -45,6 +45,7 @@ module Rdb2spreadsheet
         target.save
       rescue => e
         puts e.message
+        puts e.backtrace
       end
     end
 
